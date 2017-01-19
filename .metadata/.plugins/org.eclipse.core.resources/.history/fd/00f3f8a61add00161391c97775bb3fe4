@@ -1,0 +1,5 @@
+package cscd211Enums;
+
+public enum Suit {
+
+}

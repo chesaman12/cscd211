@@ -1,0 +1,11 @@
+package cscd211Methods;
+
+import java.util.Scanner;
+
+public class Lab3Methods {
+
+	public static boolean goAgain(Scanner kb)
+	{
+		if(kb == null) throw new
+	}
+}

@@ -1,0 +1,52 @@
+package cscd211Game.Players;
+
+import cscd211Game.Classes.Card;
+
+public class Player {
+	private int count;
+	private Card[] hand;
+	private String name;
+	
+	public Player(String name, int totalcards)
+	{
+		this.hand = new Card [totalcards];
+		this.name = name;
+	}
+	
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	public void giveCard(Card card)
+	{
+		if( card == null) throw new IllegalArgumentException("Card is null");
+	
+		this.hand[count] = card;
+		//The giveCard method places a card into the player's hand	
+	}
+	
+	public Card getCard (int cardNum)
+	{
+		if(cardNum < 0 || cardNum > hand.length) throw new IllegalArgumentException("Hand out of bounds");
+		return this.hand[cardNum];
+	}
+	
+	public int getHandTotal()
+	{
+		//The getHandTotal calculates the total score of the cards in the players hand. The hand contains individual cards. You will need to grab the value enumerated type and then grab the specific values rank
+		//return int - Representing the total score of the player's hand
+		return 0;
+	}
+	
+	public int getTotalCards()
+	{
+		return hand.length;
+	}
+	
+	public void resetPlayerHand()
+	{
+		hand = null;
+	}
+	
+}

@@ -1,0 +1,51 @@
+package cscd211Game.Classes;
+
+import cscd211Utils.ArrayUtils;
+
+public class Deck{
+	private Card[] cards;
+	private int count;
+	
+	public Deck(Card[] cards)
+	{
+		if(cards == null) throw new IllegalArgumentException("Array is null");
+		this.cards = new Card[cards.length];
+		for(int ix =0; ix < cards.length; ix++){
+			this.cards[ix] = new Card(cards[ix].getCardSuit(),cards[ix].getCardValue());
+		}
+		
+	}
+	
+	public String toString()
+	{
+		//TODO finish tostring
+		return "";
+	}
+	
+	public void resetDeck()
+	{
+		ArrayUtils.selectionSort(this.cards);
+	}
+	
+	public void shuffle(int times)
+	{
+		//TODO shuffle deck x times
+	}
+	
+	public Card getNextCard()
+	{
+
+		return cards[count];
+	}
+	
+	public int getTotalCard()
+	{
+		return cards.length;
+	}
+	
+	public int getCount()
+	{
+		return this.count;
+	}
+
+}

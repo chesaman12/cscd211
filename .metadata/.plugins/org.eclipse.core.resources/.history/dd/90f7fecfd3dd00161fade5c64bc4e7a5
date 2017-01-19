@@ -1,0 +1,14 @@
+package cscd211Game.Players;
+
+import cscd211Game.Classes.Deck;
+
+public class Dealer {
+	private int cardsToDeal;
+	private Deck deck;
+	private Player[] players;
+	
+	public Dealer(Player[] players, Deck deck, int cardsToDeal)
+	{
+		
+	}
+}
