@@ -1,0 +1,41 @@
+How many players will be playing? 
+5
+5
+Enter the max number of cards a player can have: 5
+Enter the name of player 1: a
+Enter the name of player 2: b
+Enter the name of player 3: c
+Enter the name of player 4: d
+Enter the name of player 5: e
+5
+Enter how many cards you want to deal to each player: 3
+Enter how many times do you want to shuffle: 54
+a {hand=8 of Clubs, 7 of Spades, 9 of Spades, null, null}
+b {hand=4 of Diamonds, 8 of Hearts, 4 of Hearts, null, null}
+c {hand=10 of Hearts, 2 of Diamonds, 8 of Diamonds, null, null}
+d {hand=4 of Hearts, 2 of Spades, Ace of Hearts, null, null}
+e {hand=Queen of Hearts, 10 of Diamonds, 7 of Clubs, null, null}
+e wins with a score of 29
+Press Enter to Continue
+
+Would you like to play again (yes or no)? 
+yes
+How many players will be playing? 
+5
+5
+Enter the max number of cards a player can have: 7
+Enter the name of player 1: a
+Enter the name of player 2: b
+Enter the name of player 3: c
+Enter the name of player 4: f
+Enter the name of player 5: d
+7
+Enter how many cards you want to deal to each player: 2
+Enter how many times do you want to shuffle: 56
+a {hand=King of Hearts, 9 of Hearts, null, null, null, null, null}
+b {hand=9 of Clubs, 2 of Spades, null, null, null, null, null}
+c {hand=6 of Clubs, Jack of Hearts, null, null, null, null, null}
+f {hand=2 of Clubs, King of Spades, null, null, null, null, null}
+d {hand=10 of Diamonds, Queen of Spades, null, null, null, null, null}
+It's a tie
+Press Enter to Continue
