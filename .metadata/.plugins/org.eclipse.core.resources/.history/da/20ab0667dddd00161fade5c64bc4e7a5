@@ -1,9 +1,0 @@
-package cscd211Methods;
-
-public class Lab3Methods {
-
-	public static boolean goAgain(Scanner kb)
-	{
-		
-	}
-}
