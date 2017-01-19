@@ -1,5 +1,5 @@
 package cscd211Enums;
-
+//Shaun was here
 public enum Suit {
 	CLUBS(1,"Clubs"), DIAMONDS(2, "Diamonds"), HEARTS(3,"Hearts"), SPADES(4,"Spades");
 	private String name;
