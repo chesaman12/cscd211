@@ -22,6 +22,15 @@ public class Card implements Comparable<Card>{
 	{
 		return this.suit;
 	}
+	
+	
+	@Override
+	public String toString() {
+		//The Value call to toString + of + the Suit call to toString
+		// "3 of hearts"
+		return value + " of " + suit;
+	}
+
 	@Override
 	public int compareTo(Card anotherCard) {
 		if( anotherCard == null) throw new IllegalArgumentException("Card is null");

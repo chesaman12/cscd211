@@ -18,9 +18,9 @@ public class Lab3Methods {
 		System.out.println("Would you like to play again (yes or no)? ");
 		String ui = kb.nextLine();
 		
-		if(ui == "yes" || ui == "YES"){
+		if(ui.equalsIgnoreCase("yes")){
 			return true;
-		}else if(ui == "no" || ui == "NO"){
+		}else if(ui.equalsIgnoreCase("no")){
 			return false;
 		}else{
 			throw new IllegalArgumentException("Enter a valid input please (yes or no).");
@@ -34,17 +34,19 @@ public class Lab3Methods {
 		if (kb == null || totalPlayers < 1 || totalCards < 1) throw new IllegalArgumentException ("Bad parameters");
 		
 		Player[] player = new Player[totalPlayers];
-		for(int ix = 0; ix < player.length; ix++){
-			System.out.println("Enter player name: ");
-			kb.nextLine();
-		}
-		return player;
+		 for (int ix = 0; ix < totalPlayers; ix ++) {
+			   System.out.print("Enter the name of player " + (ix + 1) + ": ");
+			   String name = kb.nextLine();
+			   player[ix] = new Player(name, totalCards);
+			  }
+			  return player;
 	}
 	
 	public static int readTotalPlayers(Scanner kb)
 	{
 		System.out.println("How many players will be playing? ");
-		int playercount = kb.nextInt();
+		int playercount = Integer.parseInt(kb.nextLine());
+		System.out.println(playercount);
 		return playercount;
 	}
 	
@@ -95,7 +97,7 @@ public class Lab3Methods {
 		int shuffler = 0;  
 		do {
 			System.out.print("Enter how many times do you want to shuffle: ");
-			shuffler =  kb.nextInt();
+			shuffler = Integer.parseInt(kb.nextLine());
 		}while (!(shuffler > 0));
 			  return shuffler;
 	}
@@ -107,19 +109,20 @@ public class Lab3Methods {
 		  
 		  do {
 		   System.out.print("Enter the max number of cards a player can have: ");
-		   maxCards = kb.nextInt();
+		   maxCards = Integer.parseInt(kb.nextLine());
 		  }while (!(maxCards >= 1));
 		  return maxCards;
 	}
 		 
 	public static int readCardsToDeal (Scanner kb, int maxPlayerCards) 
 	{
+		System.out.println(maxPlayerCards);
 		if (kb == null || maxPlayerCards < 1) throw new IllegalArgumentException ("Bad parameters");
 		int deal = 0;
 		do {
 			System.out.print("Enter how many cards you want to deal to each player: ");
-			deal =  kb.nextInt();
-		}while(!(deal > 0 || deal < maxPlayerCards));
+			deal = Integer.parseInt(kb.nextLine());
+		}while(!(deal > 0 && deal <= maxPlayerCards));
 		return deal;
 	}
 	

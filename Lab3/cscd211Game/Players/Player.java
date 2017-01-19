@@ -1,5 +1,8 @@
 package cscd211Game.Players;
 
+import java.util.Arrays;
+
+import cscd211Enums.Value;
 import cscd211Game.Classes.Card;
 
 public class Player {
@@ -22,7 +25,7 @@ public class Player {
 	{
 		if( card == null) throw new IllegalArgumentException("Card is null");
 	
-		this.hand[count] = card;
+		this.hand[count++] = card;
 		//The giveCard method places a card into the player's hand	
 	}
 	
@@ -36,7 +39,10 @@ public class Player {
 	{
 		 int total = 0;
 		  for (int ix = 0; ix < hand.length; ix ++) {
-		   total += this.hand[ix].getCardValue().getValueRank();
+		Card card = this.hand[ix];
+		if(card != null){
+			total += card.getCardValue().getValueRank();
+		}
 		  }
 		  return total;
 		//The getHandTotal calculates the total score of the cards in the players hand. 
@@ -52,6 +58,13 @@ public class Player {
 	public void resetPlayerHand()
 	{
 		hand = null;
+		count = 0;
 	}
+
+	@Override
+	public String toString() {
+		return name + " {hand=" + Arrays.toString(hand).replaceAll("[\\[\\]]+", "") + "}";
+	}
+
 	
 }

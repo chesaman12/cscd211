@@ -25,7 +25,7 @@ public class Deck{
 			scard = cards[ix];*/
 		 StringBuffer sb = new StringBuffer();
 		  for (int ix = 0; ix < cards.length; ix ++) {
-		   sb.append(cards[ix] + "/n");
+		   sb.append(cards[ix] + "\n");
 		  }
 		  return sb.toString();
 	}

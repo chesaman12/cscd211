@@ -19,9 +19,10 @@ public class Dealer {
 	{
 		for(int i  = 0; i < players.length; i++)
 		{
-			for(int ix = 0; ix <= cardsToDeal; ix++)
+			//TODO - you might not need a for loop
+			for(int ix = 0; ix < cardsToDeal; ix++)
 			{
-				players[ix].giveCard(deck.getNextCard());
+				players[i].giveCard(deck.getNextCard());
 			}
 		}
 	}
@@ -30,16 +31,26 @@ public class Dealer {
 	{
 		for(int p = 0; p < players.length; p++)
 		{
-			for(int c = 0; c < players[c].getTotalCards(); c ++) {
-			    System.out.print(", " + players[p].getCard(c));
-			   }
-			   System.out.println(" " + players[p].getHandTotal() + " total");
+			System.out.println(players[p]);
+//			for(int c = 0; c < players[p].getTotalCards(); c ++) {
+//			   System.out.print(", " + players[p].getCard(c));
+//			   }
+//		System.out.println(" " + players[p].getHandTotal() + " total");
 		}
 	}
 	
 	public boolean cardsRemaining()
 	{
-		if(this.cardsToDeal * this.players.length <= deck.getTotalCards() - deck.getCount() - deck.getCount() - (this.cardsToDeal * this.players.length)){
+//		if(this.cardsToDeal * this.players.length <= deck.getTotalCards() - deck.getCount() - deck.getCount() - (this.cardsToDeal * this.players.length)){
+//			   return true;
+//		  }
+		
+		int sumCards = 0;
+		for (int i = 0; i < players.length; i++) {
+			sumCards += players[i].getTotalCards();
+		}
+		
+		if(this.cardsToDeal * this.players.length > sumCards ){
 			   return true;
 		  }
 		  return false;
@@ -76,7 +87,7 @@ public class Dealer {
 		 else {
 			 for (int ix = 0; ix < players.length; ix ++) {
 				 if (players[ix].getHandTotal() == winningScore) {
-					 System.out.println(players[ix] + " wins with a score of " + winningScore);
+					 System.out.println(players[ix].getName() + " wins with a score of " + winningScore);
 				 }
 			 }		
 		 }
