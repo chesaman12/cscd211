@@ -63,7 +63,7 @@ public class Lab4Methods {
 		
 		double midpoint = first + last;
 		return midpoint / 2;
-	//The computeMidpoint calculates the midpoint value of the ArrayList. 
+	//The computeMidpoint calculates the midpoint value of the ArrayList. //test
 	}
 	
 	public static double computeStandardDeviation(ArrayList<Double> myAList) 
