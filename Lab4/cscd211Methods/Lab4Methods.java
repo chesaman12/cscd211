@@ -20,8 +20,8 @@ public class Lab4Methods {
 	
 	public static double computeMean(ArrayList<Double> myAList)
 	{
-		int count = 0;
-		int sum = 0;
+		double count = 0;
+		double sum = 0;
 		 if(!(myAList.isEmpty())){
 			 for(int ix = 0; ix < myAList.size(); ix++)
 				 count += myAList.get(ix);
@@ -72,17 +72,43 @@ public class Lab4Methods {
 		if(myAList.isEmpty()) throw new IllegalArgumentException("List is empty");
 		
 		double mean = computeMean(myAList);
-		
-		//double devAList = new ArrayList<Double>(0); //TODO fix array not sure what goes instead of 0
+		double temp;
+		ArrayList<Double> devsAlist = new ArrayList<Double>();
 		
 		for(int ix = 0; ix < myAList.size(); ix++){
-			double temp = myAList.get(ix);
-			//devAList = temp - mean; 
+			double listlocation = myAList.get(ix);
+			temp = listlocation - mean; 
+			devsAlist.add(temp);
 		}
-	/*The computeStandardDeviation calculates the amount of variation form the average 
+		double squared = 0;
+		double sum = 0;
+		for(int i = 0; i < myAList.size(); i++){
+			squared = devsAlist.get(i) * devsAlist.get(i);
+			sum += squared;
+		}
+		
+		double divide = sum / (devsAlist.size() -1);
+		
+		return Math.sqrt(divide);
+	/*public static double computeStandardDeviation(java.util.ArrayList<java.lang.Double> myAList)
+	The computeStandardDeviation calculates the amount of variation form the average 
+	Compute the mean of the ArrayList 
+	Create a new ArrayList of deviations by subtracting the mean from each member from the original ArrayList. 
+	Square each member of the deviations ArrayList. 
+	Total those squared deviations. 
+	Divide by one less than the original ArrayList size. The standard deviation is the square root of this number.
+	Parameters:
+	myAList - Representing the array list
+	Returns:
+	double - Representing the midpoint
+	Throws:
+	java.lang.IllegalArgumentException - if the array list is null
+	java.lang.IllegalArgumentException - if the array list size is 0
+	Precondition:
+	You cannot produce a midpoint from an empty array list
+	 * The computeStandardDeviation calculates the amount of variation form the average 
 	Compute the mean of the ArrayList 
 	Create a new ArrayList of deviations by subtracting the mean from each member from the original ArrayList. */
-		return mean;
 	}
 	
 	public static void deleteValue(ArrayList<Double> myAList, Scanner kb) 
@@ -113,9 +139,12 @@ public class Lab4Methods {
 		
 		System.out.println("What index would you like to remove? ");
 		double ui = Double.parseDouble(kb.next());
-		if(ui > 0 && ui < myAList.size()){
-			myAList.remove(ui - 1);
-			myAList.trimToSize();
+			for(int ix = 0; ix <  myAList.size(); ix++){
+				if(ui > 0 && ui < myAList.size() && ui-1 == ix){
+				myAList.remove(ix);
+				myAList.trimToSize();
+			}
+			
 		}
 	//The deleteValueByIndex prompts the user for an index value and removes the item at that index from the array list. 
 	}
@@ -177,7 +206,7 @@ public class Lab4Methods {
 		if(type == null) throw new IllegalArgumentException("String is null");
 		if(type.isEmpty()) throw new IllegalArgumentException("String is empty");
 		
-		//TODO not sure what to do here......
+		System.out.println(type +" is "+ value);
 	//The printResults prints the message and the results of the calculation. 
 	}
 	
@@ -186,10 +215,10 @@ public class Lab4Methods {
 		if(kb == null) throw new IllegalArgumentException("Scanner is null");
 		int ui;
 		do{
-			System.out.println("Enter a positive int: ");
+			System.out.println("Enter how many starting numbers you want: ");
 			ui = Integer.parseInt(kb.next());
 		}while(ui < 0);
-		return ui;
+		return ui - 1;
 	//The readNum method prompts and ensures the user will enter a positive number that is at least 1 
 	}
 }
