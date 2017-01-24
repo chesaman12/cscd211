@@ -5,8 +5,8 @@ public class Item implements Comparable <Item>{
 	private int SKU;
 	public Item(String name, int SKU)
 	{
-		name = this.name;
-		SKU = this.SKU;
+		this.name = name;
+		this.SKU = SKU;
 	}
 	
 	@Override

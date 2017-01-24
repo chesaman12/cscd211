@@ -8,8 +8,8 @@ public class InventoryItem implements Comparable <InventoryItem>{
 	public InventoryItem(String name, int SKU, int quantity, double price)
 	{
 		item = new Item(name,SKU);
-		quantity= this.quantity;
-		price = this.price;
+		this.quantity = quantity;
+		this.price = price;
 	}
 	
 	@Override 

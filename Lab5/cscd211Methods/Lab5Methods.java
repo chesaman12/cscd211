@@ -18,10 +18,9 @@ public class Lab5Methods {
 		System.out.println("5) Quit");
 		int input;
 		do{
-			input = Integer.parseInt(kb.nextLine());
 			System.out.println("Please enter a valid int (1-5)");
-			
-		}while(input <= 0 || input >= 5);
+			input = Integer.parseInt(kb.nextLine());		
+		}while(input <= 0 || input > 5);
 			return input;
 	}
 	
