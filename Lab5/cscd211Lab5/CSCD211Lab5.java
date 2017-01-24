@@ -71,6 +71,9 @@ public class CSCD211Lab5
 				case 4: stusHappyPlace.sortInventoryByPrice();
 						break;
 						
+				case 5:
+						break;
+						
 				default: throw new IllegalArgumentException("menu choice outside valid ranges");
 			
 			}// end switch

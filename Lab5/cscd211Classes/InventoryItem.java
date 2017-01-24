@@ -1,19 +1,18 @@
-package cscdClasses;
+package cscd211Classes;
 
 
-public class InventoryItem {
+public class InventoryItem implements Comparable <InventoryItem>{
 	private Item item;
 	private double price;
 	private int quantity;
 	public InventoryItem(String name, int SKU, int quantity, double price)
 	{
-		name = item.getName();
-		SKU = item.getSKU();
+		item = new Item(name,SKU);
 		quantity= this.quantity;
 		price = this.price;
 	}
 	
-	//@Override giving an error
+	@Override 
 	public int compareTo(InventoryItem anotherItem)
 	{
 		int item = this.item.compareTo(anotherItem.item);
@@ -44,8 +43,13 @@ public class InventoryItem {
 	
 	public Item getItem()
 	{
-		//TODO fix to a deep copy
-		return this.item;
+			return new Item(this.item.getName(),this.item.getSKU());		 
 	}
+	
+	@Override
+	 public String toString() {
+	  return ("Name: " + this.item.getName() + "\nSKU: " + this.item.getSKU() + "\nQuantity: " + this.getQuantity() + "\nPrice: " + this.getPrice());
+	 }
+			
 	
 }

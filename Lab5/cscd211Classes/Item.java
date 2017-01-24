@@ -1,6 +1,6 @@
-package cscdClasses;
+package cscd211Classes;
 
-public class Item {
+public class Item implements Comparable <Item>{
 	private String name;
 	private int SKU;
 	public Item(String name, int SKU)
@@ -10,12 +10,11 @@ public class Item {
 	}
 	
 	@Override
-	public String toString()
-	{
-		return " " + SKU;
-	}
+	 public String toString() {
+	  return this.name + " - " + this.SKU;
+	 }
 	
-	//@Override giving an error
+	@Override
 	public int compareTo(Item anotherItem)
 	{
 		int name = this.name.toString().compareTo(anotherItem.name.toString());
