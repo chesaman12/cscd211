@@ -3,7 +3,7 @@ package cscd211Lab6;
 import java.util.Scanner;
 
 import cscd211LinkedList.*;
-import cscdLinkedList.LinkedListMethods;
+import cscd211Methods.LinkedListMethods;
 import cscd211Classes.BoxCar;
 
 /**
