@@ -43,14 +43,16 @@ public class LinkedList {
 			throw new IllegalArgumentException("item is null");
 
 		Node nn = new Node(item);
-		if (this.head.next == null) {
-			this.head.next = nn;
-			this.size++;
-		} else {
-			nn.next = this.head.next.next;
-			this.head.next = nn;
-			this.size++;
-		}
+		nn.next = this.head.next;
+		this.head.next = nn;
+		// if (this.head.next == null) {
+		// this.head.next = nn;
+		// this.size++;
+		// } else {
+		// nn.next = this.head.next.next;
+		// this.head.next = nn;
+		// this.size++;
+		// }
 	}
 
 	public Comparable removeLast() {
@@ -170,11 +172,12 @@ public class LinkedList {
 		if (size == 0)
 			throw new NoSuchElementException("List is empty");
 		Comparable data = this.head.next.data;
-		if (this.head.next.next == null) {
+		Node cur = this.head.next;
+		if (cur.next == null) {
 			this.head.next = null;
 			size--;
 		} else {
-			this.head.next = this.head.next.next;
+			this.head.next = cur.next;
 		}
 		return data;
 	}
