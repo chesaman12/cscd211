@@ -21,7 +21,6 @@ public class BaseballPlayer extends Player implements Cloneable {
 
 	@Override
 	public BaseballPlayer clone() throws java.lang.CloneNotSupportedException {
-		// BaseballPlayer The cloned baseball player
-		return null;
+		return (BaseballPlayer) super.clone();
 	}
 }

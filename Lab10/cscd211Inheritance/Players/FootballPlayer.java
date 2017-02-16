@@ -19,8 +19,8 @@ public class FootballPlayer extends Player implements Cloneable {
 	}
 
 	@Override
-	public BaseballPlayer clone() throws java.lang.CloneNotSupportedException {
+	public FootballPlayer clone() throws java.lang.CloneNotSupportedException {
 		// Returns super.clone() cast to a FootballPlayer
-		return null;
+		return (FootballPlayer) super.clone();
 	}
 }

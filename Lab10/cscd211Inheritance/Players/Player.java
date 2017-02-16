@@ -57,8 +57,7 @@ public class Player implements Comparable<Player>, Cloneable {
 
 	@Override
 	public Player clone() throws CloneNotSupportedException {
-		// Player Done via the call to super.clone() cast to a Player
-		return null;
+		return (Player) super.clone();
 
 	}
 
